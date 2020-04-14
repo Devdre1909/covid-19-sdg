@@ -1,0 +1,5 @@
+1586905292537		/api/v1/on-covid-19/		done in 17.511 s
+1586905292537		/api/v1/on-covid-19/		done in 2.998 s
+1586905292537		/api/v1/on-covid-19/xml		done in 10.899 s
+1586905292537		/api/v1/on-covid-19/log		done in 1.728 s
+1586905292537		/api/v1/on-covid-19/log		done in 2.300 s
