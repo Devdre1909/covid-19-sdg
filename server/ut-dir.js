@@ -1,15 +1,15 @@
 const test = {
   region: {
-    name: 'Africa',
+    name: "Africa",
     avgAge: 19.7,
     avgDailyIncomeInUSD: 5,
-    avgDailyIncomePopulation: 0.71
+    avgDailyIncomePopulation: 0.71,
   },
-  periodType: 'days',
+  periodType: "days",
   timeToElapse: 58,
   reportedCases: 674,
   population: 66622705,
-  totalHospitalBeds: 1380614
+  totalHospitalBeds: 1380614,
 };
 
 /**
@@ -20,10 +20,10 @@ const test = {
  * @returns timeToElapse in {int}
  */
 const convertToDays = (periodType, timeToElapse) => {
-  if (periodType.toLowerCase() === 'days') return timeToElapse;
-  if (periodType.toLowerCase() === 'weeks') return timeToElapse * 7;
+  if (periodType.toLowerCase() === "days") return timeToElapse;
+  if (periodType.toLowerCase() === "weeks") return timeToElapse * 7;
   // Assuming all months are 30 days
-  if (periodType.toLowerCase() === 'months') return timeToElapse * 30;
+  if (periodType.toLowerCase() === "months") return timeToElapse * 30;
   return timeToElapse;
 };
 
@@ -134,8 +134,8 @@ function globalDollarsInFlight(
 
 class Estimator {
   constructor(type, factor, data) {
-    if (type === 'impact') this.factor = factor;
-    if (type === 's_impact') this.factor = factor;
+    if (type === "impact") this.factor = factor;
+    if (type === "s_impact") this.factor = factor;
     const processTimeToElapse = globalProcessTimeToElapse(
       data.periodType,
       parseInt(data.timeToElapse, 10)
@@ -178,7 +178,7 @@ class Estimator {
       hospitalBedsByRequestedTime,
       casesForICUByRequestedTime,
       casesForVentilatorsByRequestedTime,
-      dollarsInFlight
+      dollarsInFlight,
     };
   }
 }
@@ -186,12 +186,12 @@ class Estimator {
 const covid19ImpactEstimator = (data) => {
   const toReturn = {
     data,
-    impact: new Estimator('impact', 10, data),
-    severeImpact: new Estimator('s_impact', 50, data)
+    impact: new Estimator("impact", 10, data),
+    severeImpact: new Estimator("s_impact", 50, data),
   };
   return toReturn;
 };
 
 covid19ImpactEstimator(test);
 
-module.exports = covid19ImpactEstimator;
+// module.exports = covid19ImpactEstimator;
