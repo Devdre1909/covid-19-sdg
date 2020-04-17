@@ -194,4 +194,4 @@ const covid19ImpactEstimator = (data) => {
 
 covid19ImpactEstimator(test);
 
-// module.exports = covid19ImpactEstimator;
+module.exports = covid19ImpactEstimator;
